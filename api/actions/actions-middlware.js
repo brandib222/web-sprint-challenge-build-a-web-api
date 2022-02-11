@@ -32,7 +32,7 @@ function validateAction(req, res, next) {
     console.log('validateAction middleware')
     const { name } = req.body
     if (!name) {
-        req.status(400).json({
+        req.status(404).json({
             message: 'missing a name, ya dingo'
         })
     } else {

@@ -14,7 +14,7 @@ async function validateActionId(req, res, next) {
     try {
         const action = await Action.get(req.params.id)
         if(!action) {
-            res.status(400).json({
+            res.status(404).json({
                 message: 'this action does not exist'
             })
         } else{

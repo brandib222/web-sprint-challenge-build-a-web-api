@@ -147,7 +147,16 @@ We have provided test data for all the resources.
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. You might prepare by writing down your own answers before hand.
 
 1. The core features of Node.js and Express and why they are useful.
-1. Understand and explain the use of Middleware.
-1. The basic principles of the REST architectural style.
-1. Understand and explain the use of Express Routers.
-1. Describe tooling used to manually test the correctness of an API.
+  Express.js is a framework used for Node.js. Node.js allows us to use Javascript on the backend, and Express.js is used with Node.js to help simplify APIs by using middleware to help handle and organize the routing.
+
+2. Understand and explain the use of Middleware.
+  Middleware is used to control the routing. It's a filter that actions have to go through in order to reach the correct destination. I always think of it as a gps that buffers and returns a new route if you take a wrong turn, that helps direct you to the correct path. 
+
+3. The basic principles of the REST architectural style.
+  Everything is a resource that can be accessed with a unique url. These resources can have multiple representations. REST apis are also stateless and managed by http methods. 
+
+4. Understand and explain the use of Express Routers.
+  Express routers are basically a series of filters that the url is directed through in order to find the correct path. They allow us to categorize and keep our code organized in separate files.
+
+5. Describe tooling used to manually test the correctness of an API.
+  We can use Nodemon, which allows us to run the server and see logs that we've made to the server to get back dev information. We can also use Httpie or Postman, which allows us to see how requests made to the api are being processed and make sure that they are being used correctly.

@@ -55,8 +55,6 @@ router.put('/:id', validateProjectId, (req, res) => {
 		.then(project => {
 			if (project) {
 				res.status(200).json(project);
-			} else if (!project) {
-				res.status(404).json({ message: 'The project could not be found' });
 			} else {
                 res.status(400).json({ message: 'The project is missing something' });
             }

@@ -6,7 +6,7 @@ async function validateProjectId(req, res, next) {
     try {
         const project = await Project.get(req.params.id)
         if(!project) {
-            res.status(400).json({
+            res.status(404).json({
                 message: 'this action does not exist'
             })
         } else{
@@ -14,7 +14,7 @@ async function validateProjectId(req, res, next) {
             next()
         }
     } catch(err) {
-        res.status(500).json({
+        res.status(404).json({
             message: 'problems finding action'
         })
     }

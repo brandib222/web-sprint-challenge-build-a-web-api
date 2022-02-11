@@ -1,7 +1,14 @@
 const express = require('express');
+
+const { logger, validateAction} = require('./actions/actions-middlware');
+
+const { validateProject } = require('./projects/projects-middleware');
+
 const server = express();
 
 server.use(express.json());
+
+server.use(logger)
 
 server.get('/', (req, res) => {
     res.send(`<h2>OMG I HOPE THIS WORKS</h2>`)

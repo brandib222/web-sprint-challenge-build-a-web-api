@@ -30,8 +30,8 @@ async function validateActionId(req, res, next) {
 
 function validateAction(req, res, next) {
     console.log('validateAction middleware')
-    const { name } = req.body
-    if (!name) {
+    const { id } = req.body
+    if (!id) {
         req.status(404).json({
             message: 'missing a name, ya dingo'
         })

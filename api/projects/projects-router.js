@@ -83,6 +83,13 @@ router.delete('/:id', validateProjectId, async (req, res, next) => {
 router.get('/:id/actions', validateProjectId, (req, res) => {
     // - Returns an array of actions (could be empty) belonging to a project with the given `id`.
     // - If there is no project with the given `id` it responds with a status code 404.
+    Project.getProjectActions(req.params.id)
+        .then(project => {
+            res.status(200).json(project)
+        }) .catch(err => {
+            console.log(err)
+            res.status(404).json([])
+        })
 })
 
 // export the router for the love of god if you get this error one more time I'm moving you back to Nepal to sit on a rock for the rest of your life
